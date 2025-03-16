@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Exercise Guide</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <style>
+      :root {
+        --primary-green: #198754;
+        --dark-green: #0f5132;
+        --light-green: #d1e7dd;
+        --black: #212529;
+        --gray-dark: #343a40;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: var(--black);
+      }
+
+      .exercise-card {
+        border-left: 4px solid var(--primary-green);
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .exercise-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .exercise-title {
+        color: var(--primary-green);
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .exercise-description {
+        color: var(--gray-dark);
+        font-size: 0.9rem;
+      }
+
+      .blood-sugar-tip {
+        background-color: var(--light-green);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border: 1px solid var(--primary-green);
+      }
+
+      .section-title {
+        color: var(--primary-green);
+        border-bottom: 2px solid var(--light-green);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .list-group-item {
+        background-color: #ffffff;
+        color: var(--black);
+        border-left: 3px solid var(--primary-green);
+        margin-bottom: 0.5rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .list-group-item:hover {
+        background-color: var(--light-green);
+      }
+
+      .text-success {
+        color: var(--primary-green) !important;
+      }
+
+      .border-success {
+        border-color: var(--primary-green) !important;
+      }
+
+      .lead {
+        color: var(--gray-dark);
+      }
+
+      .small {
+        color: var(--gray-dark) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center text-success mb-4">Diabetes Exercise Guide</h1>
+      <p class="text-center lead mb-5">
+        Regular physical activity helps control blood glucose levels and
+        improves insulin sensitivity
+      </p>
+
+      <div class="row mb-4">
+        <div class="col-md-12 mb-4">
+          <h3 class="section-title">Recommended Activities</h3>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="exercise-card">
+            <div class="exercise-title">🏃‍♂️ Walking Program</div>
+            <p>
+              Start with 10 minutes daily, gradually increasing to 30-45 minutes
+            </p>
+            <p class="exercise-description">
+              Best times: Early morning before breakfast or after dinner when
+              temperatures are cooler
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="exercise-card">
+            <div class="exercise-title">🚲 Cycling</div>
+            <p>15-30 minutes of moderate cycling 3-4 times weekly</p>
+            <p class="exercise-description">
+              Indoor stationary bikes are ideal during monsoon season or extreme
+              heat
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="exercise-card">
+            <div class="exercise-title">💪 Strength Training</div>
+            <p>
+              Light resistance exercises using household items or body weight
+            </p>
+            <p class="exercise-description">
+              2-3 sessions weekly with focus on major muscle groups
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="exercise-card">
+            <div class="exercise-title">🏊‍♂️ Swimming</div>
+            <p>
+              Gentle swimming for 20-30 minutes, 2-3 times weekly if accessible
+            </p>
+            <p class="exercise-description">
+              Low-impact exercise ideal for those with joint problems
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h3 class="section-title">Safety Guidelines</h3>
+          <ul class="list-group mt-3">
+            <li class="list-group-item">
+              <i class="text-success">⚠️</i> Check blood glucose before and
+              after exercise
+            </li>
+            <li class="list-group-item">
+              <i class="text-success">⚠️</i> Carry fast-acting carbohydrates
+              during activity
+            </li>
+            <li class="list-group-item">
+              <i class="text-success">⚠️</i> Stay hydrated, especially during
+              hot weather
+            </li>
+            <li class="list-group-item">
+              <i class="text-success">⚠️</i> Wear proper footwear and inspect
+              feet daily
+            </li>
+            <li class="list-group-item">
+              <i class="text-success">⚠️</i> Avoid exercise during illness or
+              extreme weather
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="blood-sugar-tip mt-4">
+        <h4 class="text-success">
+          <i class="bi bi-lightbulb"></i> Blood Sugar Response
+        </h4>
+        <p>Different exercises affect blood glucose differently:</p>
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              <span class="text-success">✓</span>
+              <strong>Aerobic exercises</strong> (walking, swimming) typically
+              lower blood glucose immediately
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              <span class="text-success">✓</span>
+              <strong>Strength training</strong> may temporarily raise blood
+              glucose but improves insulin sensitivity long-term
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 mb-4">
+        <p class="small">
+          Always consult your healthcare provider before starting a new exercise
+          program
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
